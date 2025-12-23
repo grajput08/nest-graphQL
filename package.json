@@ -1,0 +1,22 @@
+{
+  "name": "taskflow-monorepo",
+  "version": "0.0.1",
+  "description": "TaskFlow - GraphQL Task Manager Monorepo",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "backend:dev": "cd apps/backend && pnpm run start:dev",
+    "backend:build": "cd apps/backend && pnpm run build",
+    "backend:start": "cd apps/backend && pnpm run start",
+    "backend:prisma:generate": "cd apps/backend && pnpm run prisma:generate",
+    "backend:prisma:migrate": "cd apps/backend && pnpm run prisma:migrate",
+    "backend:prisma:studio": "cd apps/backend && pnpm run prisma:studio",
+    "frontend:dev": "cd apps/frontend && pnpm run dev",
+    "frontend:build": "cd apps/frontend && pnpm run build",
+    "install:all": "pnpm install"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
+  }
+}
