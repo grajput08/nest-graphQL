@@ -11,7 +11,7 @@ export class UsersService {
       include: {
         tasks: true,
       },
-    });
+    }) as Promise<User[]>;
   }
 
   async findOne(id: string): Promise<User | null> {
@@ -20,13 +20,13 @@ export class UsersService {
       include: {
         tasks: true,
       },
-    });
+    }) as Promise<User | null>;
   }
 
   async findByEmail(email: string): Promise<User | null> {
     return this.prisma.user.findUnique({
       where: { email },
-    });
+    }) as Promise<User | null>;
   }
 
   async create(data: { name: string; email: string }): Promise<User> {
@@ -35,7 +35,6 @@ export class UsersService {
       include: {
         tasks: true,
       },
-    });
+    }) as Promise<User>;
   }
 }
-

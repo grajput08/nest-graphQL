@@ -18,7 +18,7 @@ export class TasksService {
       orderBy: {
         createdAt: 'desc',
       },
-    });
+    }) as Promise<Task[]>;
   }
 
   async findOne(id: string): Promise<Task> {
@@ -33,7 +33,7 @@ export class TasksService {
       throw new NotFoundException(`Task with ID ${id} not found`);
     }
 
-    return task;
+    return task as Task;
   }
 
   async create(input: CreateTaskInput): Promise<Task> {
@@ -48,7 +48,7 @@ export class TasksService {
       include: {
         user: true,
       },
-    });
+    }) as Promise<Task>;
   }
 
   async update(id: string, input: UpdateTaskInput): Promise<Task> {
@@ -67,7 +67,7 @@ export class TasksService {
       include: {
         user: true,
       },
-    });
+    }) as Promise<Task>;
   }
 
   async delete(id: string): Promise<boolean> {

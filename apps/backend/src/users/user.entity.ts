@@ -6,16 +6,16 @@ export class User {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => String)
   name: string;
 
-  @Field()
+  @Field(() => String)
   email: string;
 
   @Field(() => [Task], { nullable: true })
   tasks?: Task[];
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 }
 

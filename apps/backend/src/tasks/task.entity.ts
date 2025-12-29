@@ -26,10 +26,10 @@ export class Task {
   @Field(() => ID)
   id: string;
 
-  @Field()
+  @Field(() => String)
   title: string;
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
   description?: string | null;
 
   @Field(() => TaskStatus)
@@ -38,10 +38,10 @@ export class Task {
   @Field(() => TaskPriority)
   priority: TaskPriority;
 
-  @Field()
+  @Field(() => Date)
   createdAt: Date;
 
-  @Field()
+  @Field(() => Date)
   updatedAt: Date;
 
   @Field(() => ID)
